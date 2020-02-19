@@ -12,6 +12,7 @@ function initGame() {
 
     document.getElementById('start').classList.add('hidden');
     document.getElementById('quiz_row').classList.remove('hidden');
+    document.getElementById('time').classList.remove('hidden');
     generateQuestion();
 
     gameTimer = setInterval(function() {
