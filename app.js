@@ -40,13 +40,14 @@ function generateQuestion() {
             i < questions[currentQuestion].potential_answers.length;
             i++
         ) {
-            const el = document.createElement('p');
+            const el = document.createElement('button');
             el.innerHTML =
                 questions[currentQuestion].potential_answers[i].answer;
             el.setAttribute(
                 'data-answer-id',
                 questions[currentQuestion].potential_answers[i].id
             );
+            el.classList.add('answer-button');
             el.addEventListener('click', checkAnswer);
             document.getElementById('answers').appendChild(el);
         }
@@ -70,8 +71,12 @@ function endGame() {
 
 function checkAnswer() {
     const selectedAnswer = this.getAttribute('data-answer-id');
-    console.log('sel', selectedAnswer);
-    console.log('ans', questions[currentQuestion].correct_answer);
+
+    const buttons = document.getElementsByClassName('answer-button');
+
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+    }
 
     if (selectedAnswer === questions[currentQuestion].correct_answer) {
         correctAnswers++;
@@ -103,10 +108,6 @@ function checkAnswer() {
         currentQuestion++;
         generateQuestion();
     }, 1500);
-}
-
-function writePassword() {
-    console.log('write');
 }
 
 document.getElementById('start').addEventListener('click', initGame);

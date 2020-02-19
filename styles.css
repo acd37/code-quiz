@@ -36,7 +36,10 @@ h1 {
     margin: 20px 0;
 }
 
-#answers p {
+#answers button {
+    background-color: transparent;
+    color: #fff;
+    margin-bottom: 20px;
     font-weight: 100;
     font-size: 1.5rem;
     text-align: center;
@@ -48,9 +51,13 @@ h1 {
     display: inline-block;
 }
 
-#answers p:hover {
+#answers button:hover {
     background-color: #273c75;
     cursor: pointer;
+}
+
+#answers button:focus {
+    outline: none;
 }
 
 .correct {
