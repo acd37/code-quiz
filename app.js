@@ -81,7 +81,7 @@ function checkAnswer() {
 
         document.getElementById('correct_answers').innerHTML = correctAnswers;
         document.getElementById('announcement').innerHTML =
-            'Correct!! +5 seconds';
+            'Correct!! +10 seconds';
 
         time = time + 10;
     } else {
