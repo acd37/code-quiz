@@ -173,7 +173,7 @@ const questions = [
                 answer: 'Mint Chocolate Chip'
             }
         ],
-        correct_answer: 'b'
+        correct_answer: 'd'
     },
     {
         question: 'Which of the following would I most like to keep as a pet?',
